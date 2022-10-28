@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="styles/panel.css" />
+    <link rel="stylesheet" href="style.css" />
+    
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/795d42cca3.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <script src="scripts/index.js"></script>
+    <script src="scripts/dashboard-tabs.js"></script>
+
+  </head>
+  
+  <body>
+    <div class="h-100 w-100">
+      <div class="navbar-container"></div>
+      <div class="panel-container">
+        <div class="side-bar">
+          <h1>Dashboard</h1>
+    
+          <button class="dropdown-btn">
+            Quiz
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-container">
+            <a id="btn-subjective-quiz" href="#">Subjective Quiz</a>
+            <a id="btn-placement-quiz" href="#">Placement Quiz</a>
+          </div>
+          <button class="dropdown-btn">
+            Book
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-container">
+            <a id = "btn-your-books" href="#">Your Books</a>
+            <a id = "btn-your-collections" href="#">Your Collections</a>
+          </div>
+          <button class="sidebar-btn">
+            Assignment
+          </button>
+    
+          <button class="sidebar-btn">
+            Tutorial
+          </button>
+    
+         
+        </div>
+        <div class="panel"></div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          dropdownContent.style.display = "block";
+        }
+      });
+    }
+  </script>
+</html>
+
+<!-- 
+    <li>
+        <span class="material-icons-outlined md-48 md-light">&#xE88a;</span>
+    </li> 
+-->
